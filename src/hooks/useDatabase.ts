@@ -69,5 +69,9 @@ export function useDatabase() {
     setState({...state, subjects: subjectsCopy})
   }
 
-  return {...state, setName, addSubject, deleteSubject, updateSubject}
+  const uploadSubject = (subjects: Subject[]) => {
+    setState({...state, subjects})
+  }
+
+  return {...state, setName, addSubject, deleteSubject, updateSubject, uploadSubject}
 }

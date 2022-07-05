@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
-import { PlusIcon, TrashIcon } from "@heroicons/react/solid";
+import { PlusIcon, TrashIcon, UploadIcon } from "@heroicons/react/solid";
 import type { NextPage } from "next";
+import Link from "next/link";
 import { useState } from "react";
 import { useDatabase } from "src/hooks/useDatabase";
 
@@ -31,7 +32,14 @@ const Degree: NextPage = () => {
       </div>
 
       <div className="overflow-x-auto">
-        <h2>Materias:</h2>
+        <h2>
+          Materias:{" "}
+          <Link href="/upload">
+            <button className="btn btn-secondary btn-md">
+              <UploadIcon className="h-5" />
+            </button>
+          </Link>
+        </h2>
 
         <h3>Agregar materia:</h3>
         <div className="mt-12 flex items-end justify-between">
