@@ -1,9 +1,18 @@
 import type { NextPage } from "next";
 import { Layout } from "@/components/layout";
 import { useEffect, useState } from "react";
-import { Subject, useDatabase } from "../hooks/useDatabase";
+import { useDatabase } from "../hooks/useDatabase";
 import { PencilIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+
+const Countdown = ({ value }: { value: number }) => {
+  const style: Record<string, number> = { "--value": value };
+  return (
+    <span className="countdown">
+      <span style={style} />%
+    </span>
+  );
+};
 
 const Home: NextPage = () => {
   const { name, subjects, updateSubject } = useDatabase();
@@ -59,9 +68,7 @@ const Home: NextPage = () => {
           <span className="text-lg">{hoursPercentage}%</span>
         ) : (
           <div>
-            <span className="countdown text-lg">
-              <span style={{ "--value": hoursPercentage }} />%
-            </span>
+            <Countdown value={hoursPercentage} />
           </div>
         )}
       </div>
@@ -85,9 +92,7 @@ const Home: NextPage = () => {
           <span>{subjectPercentage}%</span>
         ) : (
           <div>
-            <span className="countdown">
-              <span style={{ "--value": subjectPercentage }} />%
-            </span>
+            <Countdown value={subjectPercentage} />
           </div>
         )}
       </div>

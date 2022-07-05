@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { BeakerIcon, CogIcon, MoonIcon, SunIcon } from "@heroicons/react/solid";
+import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 
 export const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
