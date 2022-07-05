@@ -14,6 +14,7 @@
     "precommit": "pnpm lint-staged"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "next": "12.1.6",
     "next-themes": "^0.2.0",
     "react": "18.2.0",
